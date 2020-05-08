@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .red {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!--套用class-->
+        <div v-bind:class="{red:true}">abcdefg</div>
+
+        <!--checkbox 應用-->
+        <input type="checkbox" value="雞" v-model="message">雞
+        <input type="checkbox" value="豬" v-model="message">豬
+        <input type="checkbox" value="牛" v-model="message">牛
+        <br>
+        {{message}}
+        <br>
+
+        <!--select 應用-->
+        <select name="" id="" v-model="selected">
+            <option disabled value="">請選擇</option>
+            <option value="boy">男生</option>
+            <option value="girl">女生</option>
+            <option value="baby">小孩</option>
+        </select>
+        <br>
+        {{selected}}
+        <br>
+
+        <!--反轉字串-->
+        <input type="text" v-on:keyup.enter="reverseText" v-model="text">
+        <button v-on:click="reverseText">反轉字串</button>
+        <p>{{newText}}</p>
+
+        <!-- v-for迴圈 -->
+        <ul>
+            <li v-for="(a, index) in array">{{index}}-{{a.name}}-{{a.age}}</li>
+        </ul>
+        <!-- v-for迴圈2 -->
+        <ul>
+            <li v-for="(a,key , index) in array2">{{key}}-{{index}}-{{a.age}}</li>
+        </ul>
+
+        <!-- .lazy .number .trim -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: [],
+                selected: '',
+                a: true,
+                text: '',
+                newText: '',
+                array: [
+                    { name: 'Acer', age: '18' },
+                    { name: 'Dell', age: '16' },
+                    { name: 'HP', age: '20' }
+                ],
+                array2: {
+                    name1:{ name: 'Acer', age: '18' },
+                    name2:{ name: 'Dell', age: '16' },
+                    name3:{ name: 'HP', age: '20' }
+                }
+            },
+            methods: {
+                reverseText: function () {
+                    this.newText = this.text.split('').reverse().join('');
+                    // 透過 split('') 語法將字串拆解成一個一個獨立的字元(字串拆分為陣列)
+                    // 透過 reverse() 語法將字串順序顛倒(反轉陣列)
+                    // 最終，透過 join('') 語法將字串合併回一組字串(陣列結合成字串)
+                }
+            }
+        })
+
+        // v-bind 事件
+
+        // v-on 事件修飾符
+        // .stop 調用 e.stopPropagation() 語法，中止由內向外傳播
+        // .prevent 調用 e.preventDefault() 語法，中止超連結預設
+        // .capture 設定為由外向內傳播
+        // .self 觸發事件本身
+        // .once 單次觸發
+        // 例如 v-on:click.prevent="function",可以中斷預設事件
+
+        // v-on 按鍵修飾符
+        // 別名修飾符，如 .enter, .tab, .delete, .esc, .space, .up, .down, .left, .right
+        // 相應修飾符，如 .ctrl, .shift, .alt ，常搭配 別名修飾符使用
+        // 滑鼠修飾符 .right 右鍵 .left 左鍵 .middle 中間滾輪
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- https://medium.com/pierceshih/tagged/vuejs -->
