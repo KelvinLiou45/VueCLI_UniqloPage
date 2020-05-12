@@ -2,25 +2,49 @@
   <header>
     <div class="header_inner">
       <div class="header_inner_logo">
-        <img src="../assets/images/logo.gif" alt="logo" />
+        <router-link to="/" exact-active-class="_active"><img src="../assets/images/logo.gif" alt="logo"></router-link>
       </div>
       <div class="header_inner_nav">
         <nav>
           <ul>
             <li>
-                <router-link to="/">women</router-link>
+              <router-link to="/showProductW" exact-active-class="_active">women</router-link>
             </li>
-            <li><router-link to="/">men</router-link></li>
-            <li><router-link to="/">kids</router-link></li>
-            <li><router-link to="/">baby</router-link></li>
+            <li>
+              <router-link to="/showProductM" exact-active-class="_active">men</router-link>
+            </li>
+            <li>
+              <router-link to="/readyNotYet" exact-active-class="_active">kids</router-link>
+            </li>
+            <li>
+              <router-link to="/readyNotYet" exact-active-class="_active">baby</router-link>
+            </li>
+            <li>
+              <router-link to="/company">company</router-link>
+            </li>
+            <li>
+              <router-link to="/search">店鋪搜尋</router-link>
+            </li>
+            <li>
+              <router-link to="/FAQ">FAQ</router-link>
+            </li>
           </ul>
         </nav>
       </div>
       <div class="header_inner_user">
         <ul>
-          <li id="register">註冊</li>
-          <li id="login">登入</li>
-          <li id="cart">購物車</li>
+          <li id="registerAndLogin">
+            <router-link to="/">
+              <i class="fa fa-user"></i>
+              <span>登入及註冊</span>
+            </router-link>
+          </li>
+          <li id="cart">
+            <router-link to="/">
+              <i class="fa fa-shopping-cart"></i>
+              <span>購物車</span>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -46,47 +70,97 @@ header {
   width: 100vw;
   height: 80px;
   background: white;
-  font-family:$mainFontFamily;
+  font-family: $mainFontFamily;
   .header_inner {
-    @include displayFlex();
+    @include displayFlex(row, space-between);
     max-width: 1000px;
     width: 100%;
     height: 100%;
     .header_inner_logo {
-      @include displayFlex();
-      width: 20%;
+      @include displayFlex(row, flex-start);
+      width: 5%;
       height: 100%;
       border-radius: 0 0 5px 5px;
-      background: $logoRed;
+      // background: $logoRed;
     }
     .header_inner_nav {
       @include displayFlex();
-      width: 60%;
+      width: 75%;
       height: 100%;
       // background:yellow;
       nav {
-        width:100%;
+        @include displayFlex();
+        width: 100%;
+        height: 100%;
         ul {
-          @include displayFlex(row,center);
+          @include displayFlex();
+          width: 100%;
+          height: 100%;
           li {
+            @include displayFlex();
             padding: 5px;
-            margin: 20px;
+            padding: 0 25px;
+            height: 35px;
             text-transform: uppercase;
-            a{
-                text-decoration: none;
+            box-sizing: border-box;
+            border-left: 1px dotted black;
+            &:nth-child(1) {
+              border-left: none;
+            }
+            &:nth-child(5) {
+              border-left: none;
+              background: $mainColorWhite;
+            }
+            &:nth-child(6) {
+              border-left: none;
+              background: $mainColorGray;
+              color: white;
+            }
+            &:nth-child(7) {
+              border-left: 1px dotted white;
+              background: $mainColorGray;
+              color: white;
+            }
+            &:hover {
+              cursor: pointer;
+              a {
+                color: $logoRed;
+              }
+            }
+            ._active {
+                color: $logoRed;
+              }
+            a {
+              font-size: 14px;
+              color: $mainColorBlack;
+              font-weight: 600;
+              text-decoration: none;
             }
           }
         }
       }
     }
     .header_inner_user {
-        @include displayFlex(row,flex-end);
+      @include displayFlex(row, flex-end);
       width: 20%;
       height: 100%;
+      font-size: 14px;
       ul {
         @include displayFlex();
-        li{
-            margin:5px;
+        li {
+          padding: 0 10px;
+          cursor: pointer;
+          a {
+            color: $mainColorBlack;
+            text-decoration: none;
+            i {
+              font-size: 16px;
+            }
+            span {
+              padding-left: 8px;
+              font-weight: 600;
+            }
+          }
         }
       }
       // background:blue;

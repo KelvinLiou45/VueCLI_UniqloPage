@@ -55,6 +55,7 @@ footer {
   @include displayFlex(column);
   width: 100vw;
   height: 150px;
+  padding:50px 0 20px 0;
   background: $mainColorWhite;
   font-family:$mainFontFamily;
   .footer_inner {

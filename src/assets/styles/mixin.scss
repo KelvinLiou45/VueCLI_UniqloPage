@@ -1,16 +1,22 @@
+//Google font CDN
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Sans:wght@400;700&display=swap');
 
+//Bootstrap fontawesome CDN
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+//mixin
 @mixin displayFlex($dir: row, $jus: center, $ali: center) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $jus;
-    align-items: $ali;
-  }
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jus;
+  align-items: $ali;
+}
 
-  
-  $mainColorBlack: #242424;
-  $mainColorWhite:#F4F4F4;
-  $logoRed: rgb(255, 0, 0);
-  $white :white;
-
-  $mainFontFamily:'Noto Sans','Noto Sans TC', sans-serif;
+//varible
+$mainColorBlack: #242424;
+$mainColorWhite:#F4F4F4;
+$mainColorGray:#dadada;
+$logoRed: rgb(255, 0, 0);
+$white :white;
+$mainFontFamily:'Noto Sans','Noto Sans TC', sans-serif;

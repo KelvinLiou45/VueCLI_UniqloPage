@@ -10,21 +10,13 @@
         </div>
         <!--page內容-->
         <div class="carousel_inner_page_content">
-          <div class="carousel_inner_page_content_inf">
-            <div class="inf_title">本月特價商品</div>
-            <p class="inf_content">輕如鴻毛的舒適上衣，適合秋季的居家服系列。</p>
-            <div class="inf_slogan">秋季時尚､從今年秋天開始｡</div>
-          </div>
-          <div class="carousel_inner_page_content_pro">
-            <p class="pro_type">WOMEN</p>
-            <p class="pro_name">鵝黃色輕薄上衣 (5分袖)</p>
-            <p class="pro_price">NT$1,500</p>
-          </div>
-          <div class="carousel_inner_page_content_pro">
-            <p class="pro_type">MEN</p>
-            <p class="pro_name">藏青EX棉質上衣 (5分袖)</p>
-            <p class="pro_price">NT$1,750</p>
-          </div>
+          <carouselPageContentInf
+            inf_title="本月特價商品"
+            inf_content="輕如鴻毛的舒適上衣，適合秋季的居家服系列。"
+            inf_slogan="秋季時尚､從今年秋天開始｡"
+          />
+          <carouselPageContentPro pro_type="WOMEN" pro_name="鵝黃色輕薄上衣 (5分袖)" pro_price="NT$1,500"/>
+          <carouselPageContentPro pro_type="MEN" pro_name="藏青EX棉質上衣 (5分袖)" pro_price="NT$1,750"/>
         </div>
       </div>
       <div class="carousel_inner_page" v-else-if="carousel_index == 1">
@@ -34,21 +26,17 @@
         </div>
         <!--page內容-->
         <div class="carousel_inner_page_content">
-          <div class="carousel_inner_page_content_inf">
-            <div class="inf_title">本月暢銷服務</div>
-            <p class="inf_content">日本社交達人推薦的套裝組合，享受假日的清新時光系列。</p>
-            <div class="inf_slogan">由達人來幫您搭配穿著｡</div>
-          </div>
-          <div class="carousel_inner_page_content_pro">
-            <p class="pro_type">WOMEN</p>
-            <p class="pro_name">黑川百合子-休閒款 (2019秋)</p>
-            <p class="pro_price">NT$4,500</p>
-          </div>
-          <div class="carousel_inner_page_content_pro">
-            <p class="pro_type">MEN</p>
-            <p class="pro_name">小島裕人-休閒款 (2020春)</p>
-            <p class="pro_price">NT$3,750</p>
-          </div>
+          <carouselPageContentInf
+            inf_title="本月暢銷服務"
+            inf_content="日本社交達人推薦的套裝組合，享受假日的清新時光系列。"
+            inf_slogan="由達人來幫您搭配穿著｡"
+          />
+          <carouselPageContentPro
+            pro_type="WOMEN"
+            pro_name="黑川百合子-休閒款 (2019秋)"
+            pro_price="NT$4,500"
+          />
+          <carouselPageContentPro pro_type="MEN" pro_name="小島裕人-休閒款 (2020春)" pro_price="NT$3,750"/>
         </div>
       </div>
       <div class="carousel_inner_page" v-else-if="carousel_index == 2">
@@ -58,11 +46,11 @@
         </div>
         <!--page內容-->
         <div class="carousel_inner_page_content">
-          <div class="carousel_inner_page_content_inf">
-            <div class="inf_title">NEW</div>
-            <p class="inf_content">Uniqlo與各大通路合作，讓您用習慣的方式來輕鬆購物。</p>
-            <div class="inf_slogan">請搜尋 UNIQLO-REAL!!</div>
-          </div>
+          <carouselPageContentInf
+            inf_title="NEW"
+            inf_content="Uniqlo與各大通路合作，讓您用習慣的方式來輕鬆購物。"
+            inf_slogan="請搜尋 UNIQLO-REAL!!"
+          />
         </div>
       </div>
       <!--carousel索引左右鍵-->
@@ -83,10 +71,17 @@
 </template>
 
 <script>
+import carouselPageContentInf from "./carousel_page_content_inf";
+import carouselPageContentPro from "./carousel_page_content_pro";
+
 export default {
   name: "carousel",
   props: {
     msg: String
+  },
+  components: {
+    carouselPageContentInf,
+    carouselPageContentPro
   },
   data() {
     return {
