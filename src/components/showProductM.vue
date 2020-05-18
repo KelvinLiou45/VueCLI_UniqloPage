@@ -32,7 +32,7 @@ export default {
     return {
       productList: [
         {
-          proID: "202005120810",
+          proID: "10",
           img: require("../assets/images/product/men/外套/01-1.jpg"),
           proType: "women",
           proName: "BLOCKTECH防風雨 連帽外套",
@@ -43,65 +43,65 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005120932",
+          proID: "11",
           img: require("../assets/images/product/men/外套/02-1.jpg"),
           proType: "women",
-          proName: "可攜式抗UV 連帽外套",
-          proPrice: "790",
-          salePrice: "590",
+          proName: "輕型BLOCKTECH防風雨 連帽大衣",
+          proPrice: "2490",
+          salePrice: "1990",
           proSale: "none",
           proSaleTime: "07/01",
           proNew: "new"
         },
         {
-          proID: "202005121549",
+          proID: "12",
           img: require("../assets/images/product/men/外套/03-1.jpg"),
           proType: "women",
-          proName: "AIRism抗UV 網眼連帽外套 (長袖)",
-          proPrice: "790",
-          salePrice: "590",
+          proName: "DRY 彈性休閒連帽外套",
+          proPrice: "1490",
+          salePrice: "1190",
           proSale: "onSale",
           proSaleTime: "07/01",
           proNew: "none"
         },
         {
-          proID: "202005121552",
+          proID: "13",
           img: require("../assets/images/product/men/外套/04-1.jpg"),
           proType: "women",
           proName: "MARIMEKKO 可攜式連帽外套",
-          proPrice: "1290",
+          proPrice: "1490",
           salePrice: "990",
           proSale: "onSale",
           proSaleTime: "07/01",
           proNew: "new"
         },
         {
-          proID: "202005121522",
+          proID: "14",
           img: require("../assets/images/product/men/外套/05-1.jpg"),
           proType: "women",
-          proName: "MINNIE AMBUSH 連帽外套",
-          proPrice: "790",
+          proName: "雙面連帽外套",
+          proPrice: "1490",
           salePrice: "590",
           proSale: "none",
           proSaleTime: "07/01",
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "16",
           img: require("../assets/images/product/men/外套/06-1.jpg"),
           proType: "women",
-          proName: "MINNIE AMBUSH 連帽外套2",
-          proPrice: "790",
-          salePrice: "590",
+          proName: "休閒圓領上衣 (五分袖)",
+          proPrice: "590",
+          salePrice: "390",
           proSale: "none",
           proSaleTime: "07/01",
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "17",
           img: require("../assets/images/product/men/外套/07-1.jpg"),
           proType: "women",
-          proName: "牛仔寬版外套",
+          proName: "Dry-EX 抗UV印花連帽外套 (長袖)",
           proPrice: "990",
           salePrice: "590",
           proSale: "onSale",
@@ -109,12 +109,12 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "18",
           img: require("../assets/images/product/men/外套/08-1.jpg"),
           proType: "women",
-          proName: "工作外套",
-          proPrice: "990",
-          salePrice: "590",
+          proName: "FORTNITE 休閒連帽上衣 (長袖)",
+          proPrice: "290",
+          salePrice: "190",
           proSale: "none",
           proSaleTime: "07/01",
           proNew: "new"
@@ -146,38 +146,6 @@ export default {
     position: relative;
     max-width: 1000px;
     width: 100%;
-    .showProduct_inner_cover {
-      @include displayFlex();
-      width: 100%;
-      border: 1px solid $mainColorWhite;
-      .showProduct_inner_cover_inf {
-        @include displayFlex(column, center, center);
-        width: 50%;
-        box-sizing: border-box;
-        .inf_titleEN {
-          color: $logoRed;
-          font-weight: 600;
-          margin-bottom: 5px;
-        }
-        .inf_titleTC {
-          font-size: 24px;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-        .inf_content {
-        }
-      }
-      .showProduct_inner_cover_imgBx {
-        @include displayFlex();
-        width: 50%;
-        height: 465px;
-        // background:blue;
-        overflow: hidden;
-        img {
-          width: 100%;
-        }
-      }
-    }
   }
 }
 </style>

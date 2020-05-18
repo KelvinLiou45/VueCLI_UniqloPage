@@ -1,0 +1,9 @@
+CREATE TABLE `page-uniqlo`.`product` ( `proID` INT NOT NULL AUTO_INCREMENT , `img` TEXT NOT NULL , `proType` TEXT NOT NULL , `proName` TEXT NOT NULL , `proPrice` INT NOT NULL , `salePrice` INT NOT NULL , `proSale` TEXT NOT NULL , `proSaleTime` INT NOT NULL , `proNew` TEXT NOT NULL , `proStar` INT NOT NULL , PRIMARY KEY (`proID`)) ENGINE = InnoDB;
+
+CREATE TABLE `page-uniqlo`.`product_discuss` ( `proID` INT NOT NULL , `discuss` TEXT NOT NULL ) ENGINE = InnoDB;
+
+CREATE TABLE `page-uniqlo`.`user` ( `userID` INT NOT NULL , `username` TEXT NOT NULL , `password` TEXT NOT NULL , `gender` TEXT NOT NULL , `date` TIMESTAMP on update CURRENT_TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ) ENGINE = InnoDB;
+
+INSERT INTO `product` (`proID`, `img`, `proType`, `proName`, `proPrice`, `salePrice`, `proSale`, `proSaleTime`, `proNew`, `proStar`) VALUES (NULL, '../assets/images/product/men/外套/01-1.jpg', 'women', 'BLOCKTECH防風雨 連帽外套', '2490', '1890', 'none', '0701', 'none', '4');
+
+INSERT INTO `product` (`proID`, `img`, `proType`, `proName`, `proPrice`, `salePrice`, `proSale`, `proSaleTime`, `proNew`, `proStar`, `date`) VALUES (NULL, '../assets/images/product/men/外套/05-1.jpg', 'men', '雙面連帽外套', '1490', '590', 'none', '20200701', 'none', '4', current_timestamp());

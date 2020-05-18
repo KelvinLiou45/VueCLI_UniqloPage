@@ -7,18 +7,23 @@
 </template>
 
 <script>
+import headerEle from "./elements/header";
+import footerEle from "./elements/footer";
 
-import headerEle from './elements/header'
-import footerEle from './elements/footer'
+// axios import
+import Vue from "vue";
+import axios from "axios";
+import VueAxios from "vue-axios";
+Vue.use(VueAxios, axios);
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    headerEle,footerEle
+    headerEle,
+    footerEle
   }
-}
+};
 </script>
 
 <style>
-
 </style>

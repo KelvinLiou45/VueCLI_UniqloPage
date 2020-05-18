@@ -12,7 +12,8 @@
         <!--proList-->
         <proList/>
         <!--showProduct_inner_squares-->
-        <showProductInnerSquares v-bind:productList="productList" />
+        {{productList}}
+        <showProductInnerSquares v-bind:productList="productList"/>
       </div>
     </div>
   </article>
@@ -29,10 +30,10 @@ export default {
     msg: String
   },
   data() {
-    return {
+    /*return {
       productList: [
         {
-          proID: "202005120810",
+          proID: "1",
           img: require("../assets/images/product/women/外套/01-1.jpg"),
           proType: "women",
           proName: "BLOCKTECH防風雨 連帽外套",
@@ -43,7 +44,7 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005120932",
+          proID: "3",
           img: require("../assets/images/product/women/外套/02-1.jpg"),
           proType: "women",
           proName: "可攜式抗UV 連帽外套",
@@ -54,7 +55,7 @@ export default {
           proNew: "new"
         },
         {
-          proID: "202005121549",
+          proID: "4",
           img: require("../assets/images/product/women/外套/03-1.jpg"),
           proType: "women",
           proName: "AIRism抗UV 網眼連帽外套 (長袖)",
@@ -65,7 +66,7 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005121552",
+          proID: "5",
           img: require("../assets/images/product/women/外套/04-1.jpg"),
           proType: "women",
           proName: "MARIMEKKO 可攜式連帽外套",
@@ -76,7 +77,7 @@ export default {
           proNew: "new"
         },
         {
-          proID: "202005121522",
+          proID: "6",
           img: require("../assets/images/product/women/外套/05-1.jpg"),
           proType: "women",
           proName: "MINNIE AMBUSH 連帽外套",
@@ -87,7 +88,7 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "7",
           img: require("../assets/images/product/women/外套/06-1.jpg"),
           proType: "women",
           proName: "MINNIE AMBUSH 連帽外套2",
@@ -98,7 +99,7 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "8",
           img: require("../assets/images/product/women/外套/07-1.jpg"),
           proType: "women",
           proName: "牛仔寬版外套",
@@ -109,7 +110,7 @@ export default {
           proNew: "none"
         },
         {
-          proID: "202005121522",
+          proID: "9",
           img: require("../assets/images/product/women/外套/08-1.jpg"),
           proType: "women",
           proName: "工作外套",
@@ -120,7 +121,38 @@ export default {
           proNew: "new"
         }
       ]
+    };*/
+    return {
+      productList: ""
     };
+  },
+  created() {
+    this.getProuduct();
+  },
+  methods: {
+    getProuduct() {
+      const axios = require("axios").default;
+      axios
+        .get("http://localhost:3000/getProduct", {
+          params: {
+            type: this.$route.params.type
+          }
+        })
+        .then(function(response) {
+          // handle success
+          // console.log(response.data);
+          alert('hello');
+          this.productList = response.data;
+          console.log(this.productList);
+        })
+        .catch(function(error) {
+          // handle error
+          console.log(error);
+        })
+        .then(function() {
+          // always executed
+        });
+    }
   },
   components: {
     proList,
@@ -146,38 +178,6 @@ export default {
     position: relative;
     max-width: 1000px;
     width: 100%;
-    .showProduct_inner_cover {
-      @include displayFlex();
-      width: 100%;
-      border: 1px solid $mainColorWhite;
-      .showProduct_inner_cover_inf {
-        @include displayFlex(column, center, center);
-        width: 50%;
-        box-sizing: border-box;
-        .inf_titleEN {
-          color: $logoRed;
-          font-weight: 600;
-          margin-bottom: 5px;
-        }
-        .inf_titleTC {
-          font-size: 24px;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-        .inf_content {
-        }
-      }
-      .showProduct_inner_cover_imgBx {
-        @include displayFlex();
-        width: 50%;
-        height: 465px;
-        // background:blue;
-        overflow: hidden;
-        img {
-          width: 100%;
-        }
-      }
-    }
   }
 }
 </style>

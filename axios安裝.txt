@@ -1,0 +1,8 @@
+1. npm install --save axios vue-axios
+
+2. 在app.vue裡輸入以下
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)

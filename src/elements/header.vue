@@ -8,10 +8,10 @@
         <nav>
           <ul>
             <li>
-              <router-link to="/showProductW" exact-active-class="_active">women</router-link>
+              <router-link :to="{name:'showProductW',params: { type: 'women'}}" exact-active-class="_active">women</router-link>
             </li>
             <li>
-              <router-link to="/showProductM" exact-active-class="_active">men</router-link>
+              <router-link :to="{name:'showProductM',params: { type: 'men'}}" exact-active-class="_active">men</router-link>
             </li>
             <li>
               <router-link to="/readyNotYet" exact-active-class="_active">kids</router-link>
@@ -36,7 +36,7 @@
           <li id="registerAndLogin">
             <router-link to="/">
               <i class="fa fa-user"></i>
-              <span>登入及註冊</span>
+              <span><router-link to="/loginAndRegister" exact-active-class="_active">登入及註冊</router-link></span>
             </router-link>
           </li>
           <li id="cart">
