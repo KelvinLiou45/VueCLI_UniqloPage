@@ -3,8 +3,7 @@ import VueRouter from 'vue-router'; //載入 vue-router
 
 import home from "@/components/home"
 import loginAndRegister from "@/components/loginAndRegister"
-import showProductW from "@/components/showProductW"
-import showProductM from "@/components/showProductM"
+import showProduct from "@/components/showProduct"
 import productDetailPage from "@/components/productDetailPage"
 import readyNotYet from "@/components/readyNotYet"
 
@@ -12,6 +11,7 @@ import readyNotYet from "@/components/readyNotYet"
 Vue.use(VueRouter) //使用 vue-router
 
 export default new VueRouter({
+  // mode: 'history',
   routes: [
     {
       name: 'home',  
@@ -26,18 +26,19 @@ export default new VueRouter({
     ,
     {
       name: 'showProductW',  
-      path: '/showProductW', 
-      component: showProductW
+      path: '/showProduct', 
+      component: showProduct
     },
     {
       name: 'showProductM',  
-      path: '/showProductM', 
-      component: showProductM
+      path: '/showProduct', 
+      component: showProduct
     }
     ,
     {
       name: 'productDetailPage',  
-      path: '/productDetailPage/:proID', 
+      // path: '/productDetailPage/:proID', 
+      path: '/productDetailPage', 
       component: productDetailPage
     }
     ,

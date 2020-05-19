@@ -1,53 +1,65 @@
 <template>
   <article class="productDetailPage">
-    {{this.$route.params.proID}}
+    <div class="productDetail">
+      <div></div>
+    </div>
+
+    <!-- {{this.$route.query.proID}}
+    <br>
+    <img :src="proImg" alt="">
     <br>
     {{proDepiction}}
     <br>
-    {{proPoint}}
+    {{proPoint}} -->
   </article>
 </template>
 
 <script>
-let data = {
-  proDepiction: "s",
-  proPoint: ""
-};
-
 export default {
   name: "showProduct",
   props: {
     msg: String
   },
   data() {
-    return data;
+    return {
+      proImg:"",
+      proDepiction: "",
+      proPoint: ""
+    };
   },
-  mounted() {
-    //取得商品的Depiction
-    const axios2 = require("axios").default;
-    axios2
-      .get("http://localhost:3000/getProductDepiction", {
-        params: {
-          proID: this.$route.params.proID
-        }
-      })
-      .then(function(response) {
-        // handle success
-        console.log(response.data[0]);
-        data.proDepiction = response.data[0].depiction;
-        data.proPoint = response.data[0].point;
-      })
-      .catch(function(error) {
-        // handle error
-        console.log(error);
-      })
-      .then(function() {
-        // always executed
-      });
+  created() {
+    this.getProduct();
+    this.getProductDepiction();
   },
   methods: {
-    showID: function() {
-      alert(this.$route.params.proID);
+    getProduct: function() {
+      const axios = require("axios").default;
+      axios
+        .get("http://localhost:3000/getProduct_Id", {
+          params: {
+            proID: this.$route.query.proID
+          }
+        })
+        .then((response) => {
+          // handle success
+          console.log(response.data[0]);
+          this.$data.proImg = response.data[0].img;
+        });
+    },
+    getProductDepiction: function() {
+      const axios = require("axios").default;
+      axios
+        .get("http://localhost:3000/getProductDepiction", {
+          params: {
+            proID: this.$route.query.proID
+          }
+        })
+        .then((response) => {
+          // handle success
+          console.log(response.data[0]);
+          this.$data.proDepiction = response.data[0].depiction;
+          this.$data.proPoint = response.data[0].point;
+        });
     }
   },
   components: {}

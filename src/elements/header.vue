@@ -8,10 +8,10 @@
         <nav>
           <ul>
             <li>
-              <router-link :to="{name:'showProductW',params: { type: 'women'}}" exact-active-class="_active">women</router-link>
+              <router-link :to="{name:'showProductW',query: { type: 'women'}}" exact-active-class="_active">women</router-link>
             </li>
             <li>
-              <router-link :to="{name:'showProductM',params: { type: 'men'}}" exact-active-class="_active">men</router-link>
+              <router-link :to="{name:'showProductM',query: { type: 'men'}}" exact-active-class="_active">men</router-link>
             </li>
             <li>
               <router-link to="/readyNotYet" exact-active-class="_active">kids</router-link>

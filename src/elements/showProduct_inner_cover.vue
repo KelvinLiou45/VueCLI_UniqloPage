@@ -10,7 +10,7 @@
       <div class="inf_content">神采奕奕的生活､從穿搭開始｡</div>-->
     </div>
     <div class="showProduct_inner_cover_imgBx">
-      <img v-bind:src="require(`@/assets/images/product/${inf_imgType}/cover.jpg`)" alt>
+      <img v-bind:src="`./img/product/${inf_imgType}/cover.jpg`" alt>
     </div>
   </div>
 </template>

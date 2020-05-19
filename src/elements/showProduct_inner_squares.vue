@@ -1,12 +1,12 @@
 <template>
   <div class="showProduct_inner_squares">
-    {{product}}
-    <div class="showProduct_inner_squares_square" v-for="(product,key) in product" v-bind:key="key">
-      <router-link :to="{name:'productDetailPage',params: { proID: product.proID}}">
+    <!-- {{productList}} -->
+    <div class="showProduct_inner_squares_square" v-for="(product,key) in productList" v-bind:key="key">
+      <router-link :to="{name:'productDetailPage',query: { proID: product.proID}}">
         <div class="square_new" v-show=" product.proNew == 'new' ">NEW</div>
         <div class="square_proImgBx">
-          {{product.img}}
-          <img v-bind:src="''+product.img" alt>
+          <!-- <img v-bind:src="require(`${product.img}`)" alt> -->
+          <img :src="`${product.img}`" alt>
         </div>
         <div class="square_proContent">
           <div class="square_proContent_name">{{product.proName}}</div>
@@ -60,8 +60,9 @@ export default {
   data() {
     return data
   },
-  beforeMount(){
-    data.product= this.productList;
+  created(){
+    // data.product= this.productList;
+    // this.$set(data.product, 'penguin', this.productList)
   },
   methods: {
     inProductPage: function(id) {
